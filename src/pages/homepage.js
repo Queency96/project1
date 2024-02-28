@@ -5,9 +5,8 @@ import Employee from './components/Employee'
 import AddEmployee from './components/AddEmployee'
 import { v4 as uuidv4 } from 'uuid'
 import EditEmployee from './components/EditEmployee'
-import Header from './components/Header'
 
-function App() {
+function Homepage() {
   const [role, setRole] = useState('Dev')
   const [employees, setEmployees] = useState([
     {
@@ -71,7 +70,6 @@ function App() {
   const showEmployee = true
   return (
     <div className="flex flex-wrap gap-2">
-      <Header />
       {showEmployee ? (
         <>
           <input
@@ -112,4 +110,4 @@ function App() {
   )
 }
 
-export default App
+export default Homepage
