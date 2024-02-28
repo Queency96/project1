@@ -1,13 +1,12 @@
 /* eslint-disable no-undef */
 import { useState } from 'react'
-import './App.css'
-import Employee from './components/Employee'
-import AddEmployee from './components/AddEmployee'
+import '../App.css'
+import Employee from '../components/Employee'
+import AddEmployee from '../components/AddEmployee'
 import { v4 as uuidv4 } from 'uuid'
-import EditEmployee from './components/EditEmployee'
+import EditEmployee from '../components/EditEmployee'
 
-function Homepage() {
-  const [role, setRole] = useState('Dev')
+function Employees() {
   const [employees, setEmployees] = useState([
     {
       id: 1,
@@ -68,17 +67,12 @@ function Homepage() {
   }
 
   const showEmployee = true
+
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="bg-gray-300 min-h-screen">
       {showEmployee ? (
         <>
-          <input
-            type="text"
-            onChange={(e) => {
-              setRole(e.target.value)
-            }}
-          />
-          <div className="flex flex-wrap gap-2 justify-center">
+          <div className="flex flex-wrap gap-2 justify-center py-3">
             {employees.map((employee) => {
               const editEmployee = (
                 <EditEmployee
@@ -99,9 +93,10 @@ function Homepage() {
                 />
               )
             })}
-            ;
           </div>
-          <AddEmployee newEmployee={newEmployee} />
+          <div className="d-flex justify-center">
+            <AddEmployee newEmployee={newEmployee} />
+          </div>
         </>
       ) : (
         <p>You cannot see the employees</p>
@@ -110,4 +105,4 @@ function Homepage() {
   )
 }
 
-export default Homepage
+export default Employees
