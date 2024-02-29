@@ -69,7 +69,7 @@ function Employees() {
   const showEmployee = true
 
   return (
-    <div className="bg-gray-300 min-h-screen">
+    <div className="max-w-7xl min-h-screen">
       {showEmployee ? (
         <>
           <div className="flex flex-wrap gap-2 justify-center py-3">
